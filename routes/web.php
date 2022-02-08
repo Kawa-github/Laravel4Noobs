@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\UsersController;
+use \App\Http\Controllers\UserController;
 use Faker\Guesser\Name;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -21,7 +21,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('usuario/me',[UsersController::class,'GetmeProfile'])->name('user-profile');
-Route::get('user/info', [UsersController::class, 'informations'])->name('user-info');
-Route::get('/user/{username}', [UsersController::class, 'getProfile']);
-Route::get('/teste', [UsersController::class, 'teste']);
+Route::get('usuario/me',[UserController::class,'getMeProfile'])->name('user-profile');
+Route::get('profile/info', [UserController::class, 'getInformations'])->name('user-info');
+Route::get('/user/{username}', [UserController::class, 'getProfile']);
+Route::get('/teste', [UserController::class, 'teste']);
+Route::get('/testing', [UserController::class, 'testing']);

@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UserController extends Controller
 {
     public function getProfile(string $username){
         return view('users', compact('username'));
     }
 
-    public function GetmeProfile(){
+    public function getMeProfile(){
         $username = 'Kawã';
         return redirect(route('user-info', ['username' => 'kawa']));
+    }
+
+    public function testing(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'age' => 'required|numeric'
+        ]);
     }
 
     public function teste(){
@@ -20,7 +27,7 @@ class UsersController extends Controller
         return redirect(route('user-profile', ['username' => 'kawa']));
     }
 
-    public function informations(){
+    public function getInformations(){
         $info = [
         'name' => 'Kawa',
         'age' => 18,
