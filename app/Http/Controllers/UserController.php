@@ -17,8 +17,8 @@ class UserController extends Controller
 
     public function testing(Request $request){
         $this->validate($request, [
-            'name' => 'required',
-            'age' => 'required|numeric'
+            'name' => 'required|exists:users',//
+            'age' => 'required|numeric|unique:users,age' 
         ]);
     }
 
