@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TestRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,11 +16,14 @@ class UserController extends Controller
         return redirect(route('user-info', ['username' => 'kawa']));
     }
 
-    public function testing(Request $request){
-        $this->validate($request, [
-            'name' => 'required|exists:users',//
-            'age' => 'required|numeric|unique:users,age' 
-        ]);
+    public function testing(TestRequest $request){
+        // $this->validate($request, [
+        //     'name' => 'required|exists:users',//
+        //     'age' => 'required|numeric|unique:users,age' 
+        // ]);
+
+        //Código aqui...
+
     }
 
     public function teste(){
