@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function getProfile(string $username){
-        return view('users', compact('username'));
+        $args = ['a' => '','b',1,2,3];
+        $alunos = ['kawa','rafael','carlos','bianca','beatriz'];
+        $whilezada = true;
+        return view('users', compact(['username', 'args','whilezada','alunos']));
     }
 
     public function getMeProfile(){

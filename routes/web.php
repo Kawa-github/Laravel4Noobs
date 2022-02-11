@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\UserController;
+// use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\LandingController;
 use Faker\Guesser\Name;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -16,13 +17,11 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
     
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('usuario/me',[UserController::class,'getMeProfile'])->name('user-profile');
-Route::get('profile/info', [UserController::class, 'getInformations'])->name('user-info');
-Route::get('/user/{username}', [UserController::class, 'getProfile']);
-Route::get('/teste', [UserController::class, 'teste']);
-Route::get('/testing', [UserController::class, 'testing']);
+Route::get('/', [\App\Http\Controllers\LandingController::class, 'getLandingPage']);
+Route::get('/about', [\App\Http\Controllers\LandingController::class, 'getAboutPage']);
+     
+// Route::get('usuario/me',[UserController::class,'getMeProfile'])->name('user-profile');
+// Route::get('profile/info', [UserController::class, 'getInformations'])->name('user-info');
+// Route::get('/user/{username}', [UserController::class, 'getProfile']);
+// Route::get('/teste', [UserController::class, 'teste']);
+// Route::get('/testing', [UserController::class, 'testing']);

@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-    echo $username;
-?>
+  <marquee>
+
+
+   </marquee>
 </body>
 </html>
