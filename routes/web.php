@@ -17,9 +17,11 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
     
-Route::get('/', [\App\Http\Controllers\LandingController::class, 'getLandingPage']);
-Route::get('/about', [\App\Http\Controllers\LandingController::class, 'getAboutPage']);
+Route::get('/', [LandingController::class, 'getLandingPage']);
+Route::get('/about', [LandingController::class, 'getAboutPage']);
+Route::get('/informations' , [LandingController::class, 'getInformations']);
      
+
 // Route::get('usuario/me',[UserController::class,'getMeProfile'])->name('user-profile');
 // Route::get('profile/info', [UserController::class, 'getInformations'])->name('user-info');
 // Route::get('/user/{username}', [UserController::class, 'getProfile']);
