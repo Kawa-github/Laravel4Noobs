@@ -45,4 +45,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'age' => 'integer'
     ];
+
+     public function post(){
+         return $this->hasOne(Post::class, 'user_id', 'id'); //chave estrangeira: user_id, chave primária: id
+     }
+     
+     public function posts(){
+         return $this->hasMany(Post::class);
+     }
+     
+
 }
+
