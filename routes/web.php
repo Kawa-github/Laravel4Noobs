@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // use \App\Http\Controllers\UserController;
 use \App\Http\Controllers\LandingController;
+use App\Http\Controllers\PostsController;
 use Faker\Guesser\Name;
 use Illuminate\Routing\Route as RoutingRoute;
 
@@ -20,8 +21,8 @@ use Illuminate\Routing\Route as RoutingRoute;
 Route::get('/', [LandingController::class, 'getLandingPage']);
 Route::get('/about', [LandingController::class, 'getAboutPage']);
 Route::get('/informations' , [LandingController::class, 'getInformations']);
-     
-
+Route::get('/posts', [PostsController::class, 'getPosts']);
+Route::get('/post/{post}', [PostsController::class, 'getPost']);
 // Route::get('usuario/me',[UserController::class,'getMeProfile'])->name('user-profile');
 // Route::get('profile/info', [UserController::class, 'getInformations'])->name('user-info');
 // Route::get('/user/{username}', [UserController::class, 'getProfile']);
